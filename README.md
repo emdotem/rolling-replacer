@@ -13,7 +13,7 @@ $ pip install rolling-replacer
 
 ## Usage
 ```bash
-$ rolling-replacer <strategy> <asg-blue> <tg-blue> <asg-green> <tg-green> <alb-name>
+$ rolling-replacer <strategy> <asg-blue> <tg-blue> <listerner-rule-blue> <asg-green> <tg-green> <listerner-rule-green> <alb-name>
 ```
 
 ## Contributing

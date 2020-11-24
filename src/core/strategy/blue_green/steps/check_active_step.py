@@ -1,4 +1,4 @@
-from src.models.strategy.blue_green.step import BlueGreenStep
+from src.core.strategy.blue_green.step import BlueGreenStep
 
 
 class CheckActiveStep(BlueGreenStep):

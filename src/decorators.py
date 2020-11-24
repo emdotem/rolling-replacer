@@ -12,7 +12,7 @@ def configure_logging(f: Callable) -> Callable:
         if verbose > 0:
             level = logging.DEBUG
 
-        logging.basicConfig(format="[%(levelname)s] %(message)s", level=level)
+        logging.basicConfig(format="[%(asctime)s] [%(levelname)s] %(message)s", level=level)
 
         logging.getLogger("boto3").setLevel(logging.CRITICAL)
         logging.getLogger("botocore").setLevel(logging.CRITICAL)

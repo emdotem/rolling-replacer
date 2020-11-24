@@ -4,7 +4,7 @@ from typing import List, Optional
 
 import boto3
 
-from src.utils.aws_instance import Instance
+from src.aws.aws_instance import Instance
 
 client = boto3.client("autoscaling")
 logger = logging.getLogger(__name__)
@@ -19,6 +19,24 @@ class AutoscalingGroup:
     min_size: int
     name: str
     target_groups_arns: List[str]
+
+    @property
+    def provisioning_instances(self) -> List[Instance]:
+        return [
+            i
+            for i in self.instances
+            if i.lifecycle_state
+            not in [
+                "Terminating",
+                "Terminating:Wait",
+                "Terminating:Proceed",
+                "Terminated",
+                "Detaching",
+                "Detached",
+                "EnteringStandby",
+                "Standby",
+            ]
+        ]
 
 
 def get(name: str) -> AutoscalingGroup:

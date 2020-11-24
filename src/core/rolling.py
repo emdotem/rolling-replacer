@@ -1,6 +1,6 @@
 import logging
 
-from src.models.strategy.stategy import Strategy
+from src.core.strategy.stategy import Strategy
 
 logger = logging.getLogger(__name__)
 

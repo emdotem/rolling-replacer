@@ -1,8 +1,8 @@
 from typing import List
 
-from src.models.strategy.blue_green.step import BlueGreenStep
-from src.utils import aws_instance
-from src.utils.aws_autoscaling_group import Instance
+from src.aws import aws_instance
+from src.aws.aws_autoscaling_group import Instance
+from src.core.strategy.blue_green.step import BlueGreenStep
 
 
 class TerminateInactiveInstancesStep(BlueGreenStep):

@@ -1,5 +1,5 @@
-from src.models.strategy.blue_green.step import BlueGreenStep
-from src.utils import aws_autoscaling_group
+from src.aws import aws_autoscaling_group
+from src.core.strategy.blue_green.step import BlueGreenStep
 
 
 class CheckAutoscalingSizeStep(BlueGreenStep):

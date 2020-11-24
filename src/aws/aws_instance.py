@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 class Instance:
     health_status: str
     id: str
-    lifecycle_state: str
+    lifecycle_state: str  # 'Pending'|'Pending:Wait'|'Pending:Proceed'|'Quarantined'|'InService'|'Terminating'|'Terminating:Wait'|'Terminating:Proceed'|'Terminated'|'Detaching'|'Detached'|'EnteringStandby'|'Standby',
 
 
 def get(identifier: str) -> Instance:
